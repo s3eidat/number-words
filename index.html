@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Number to Words — English &amp; Arabic (تفقيط) with Currency | S3eidat Tools</title>
+<meta name="description" content="Write numbers as words in English (cardinal, ordinal, cheque style) and Arabic tafqeet with dinar/fils, dollar, riyal and more, with correct gender and number agreement. Up to 999 trillion. Free and private.">
+<meta property="og:title" content="Number to Words — English and Arabic tafqeet">
+<meta property="og:description" content="Cheque-ready amounts in words: English and Arabic with currency. Runs in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="number-words">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Number to Words</h1>
+    <p>Write any amount in words, in English and Arabic (تفقيط), ready for cheques, invoices and contracts. Up to 999 trillion.</p>
+  </section>
+
+  <section class="card">
+    <div class="nw-inputrow">
+      <label class="field grow" for="num">Number or amount
+        <input type="text" class="input nw-num" id="num" inputmode="decimal" dir="ltr" autocomplete="off" spellcheck="false" value="1500.250" placeholder="e.g. 1,500.250">
+      </label>
+      <label class="field nw-curf" for="cur">Currency
+        <select class="select" id="cur"></select>
+      </label>
+    </div>
+    <div class="row mt nw-opts">
+      <span class="faint">Try:</span>
+      <button class="chip nw-ex">21</button><button class="chip nw-ex">2000</button><button class="chip nw-ex">1500.250</button><button class="chip nw-ex">250000</button><button class="chip nw-ex">1234567.89</button>
+      <span class="grow"></span>
+      <span class="chip accent mono" id="digits">—</span>
+    </div>
+    <p class="nw-err" id="err" role="alert" hidden></p>
+    <div class="row mt nw-opts">
+      <label class="check" id="onlywrap"><input type="checkbox" id="only"> “only” / <bdi lang="ar">فقط … لا غير</bdi></label>
+      <label class="check"><input type="checkbox" id="brit"> British “and” (one hundred and five)</label>
+      <label class="check"><input type="checkbox" id="mia"> Spell مئة instead of مائة</label>
+      <div class="seg" id="substyle" role="group" aria-label="Cents style">
+        <button aria-pressed="true" data-v="words">Cents in words</button>
+        <button aria-pressed="false" data-v="fraction">25/100</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-2 mt nw-grid">
+    <section class="card stack">
+      <h2>English</h2>
+      <div class="nw-item nw-money">
+        <div class="row between"><span class="nw-lbl">Cheque / amount</span><button class="btn ghost small" data-copy="en-chq"><svg class="i"><use href="#i-copy"/></svg>Copy</button></div>
+        <div class="out nw-out nw-main" id="en-chq"></div>
+      </div>
+      <div class="nw-item">
+        <div class="row between"><span class="nw-lbl">Cardinal</span><button class="btn ghost small" data-copy="en-card"><svg class="i"><use href="#i-copy"/></svg>Copy</button></div>
+        <div class="out nw-out" id="en-card"></div>
+      </div>
+      <div class="nw-item">
+        <div class="row between"><span class="nw-lbl">Ordinal</span><button class="btn ghost small" data-copy="en-ord"><svg class="i"><use href="#i-copy"/></svg>Copy</button></div>
+        <div class="out nw-out" id="en-ord"></div>
+      </div>
+    </section>
+
+    <section class="card stack" lang="ar" dir="rtl">
+      <h2>العربية <small lang="en">Arabic</small></h2>
+      <div class="nw-item nw-money">
+        <div class="row between"><span class="nw-lbl">التفقيط (المبلغ كتابةً)</span><button class="btn ghost small" data-copy="ar-money"><svg class="i"><use href="#i-copy"/></svg>نسخ</button></div>
+        <div class="out nw-out nw-ar nw-main" id="ar-money" dir="rtl"></div>
+      </div>
+      <div class="nw-item">
+        <div class="row between"><span class="nw-lbl">العدد كتابةً</span><button class="btn ghost small" data-copy="ar-card"><svg class="i"><use href="#i-copy"/></svg>نسخ</button></div>
+        <div class="out nw-out nw-ar" id="ar-card" dir="rtl"></div>
+      </div>
+      <p class="faint nw-note" dir="ltr" lang="en">Number and gender agreement for 1, 2, 3–10, 11–99, hundreds and thousands, including feminine sub-units like <bdi lang="ar">هللة</bdi>.</p>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

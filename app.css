@@ -1,0 +1,19 @@
+.nw-inputrow { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
+.nw-num { font-size: 22px; font-weight: 650; height: 54px; min-height: 54px; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.nw-curf { flex: 0 1 240px; min-width: 200px; }
+.nw-curf .select { height: 54px; min-height: 54px; }
+.nw-opts { gap: 8px 16px; }
+.nw-ex { cursor: pointer; font-family: var(--mono); }
+.nw-ex:hover { border-color: var(--accent); color: var(--text); }
+.nw-err { margin: 12px 0 0; color: var(--danger); font-weight: 550; }
+.nw-grid { align-items: start; }
+.nw-item { display: grid; gap: 6px; }
+.nw-lbl { font-size: 12px; font-weight: 650; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; }
+.nw-out { font-family: var(--font); font-size: 15.5px; line-height: 1.65; min-height: 0; }
+.nw-main { font-size: 17px; font-weight: 600; color: var(--text); border-color: var(--accent-soft); background: linear-gradient(120deg, var(--accent-soft), transparent 70%), var(--surface-2); }
+.nw-ar { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, var(--font); font-size: 18px; line-height: 1.9; }
+.nw-ar.nw-main { font-size: 20px; }
+.nw-empty { color: var(--text-3); font-weight: 400; }
+.nw-note { margin: 0; }
+[lang="ar"] .nw-lbl { text-transform: none; letter-spacing: 0; font-size: 13px; }
+.nw-inputrow > .grow { flex: 1 1 260px; }
